@@ -1,5 +1,7 @@
 ﻿namespace DotNet8.PersonalityTestCard.DbService.AppDbContextModels;
 
+#region TblUser
+
 public partial class TblUser
 {
     public int UserId { get; set; }
@@ -14,3 +16,5 @@ public partial class TblUser
 
     public virtual ICollection<TblUserElementScore> TblUserElementScores { get; set; } = new List<TblUserElementScore>();
 }
+
+#endregion
