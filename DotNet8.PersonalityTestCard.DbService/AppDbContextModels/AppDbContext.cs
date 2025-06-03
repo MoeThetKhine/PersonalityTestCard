@@ -86,6 +86,8 @@ public partial class AppDbContext : DbContext
 
 		#endregion
 
+		#region TblUserCard
+
 		modelBuilder.Entity<TblUserCard>(entity =>
         {
             entity.HasKey(e => e.UserCardId).HasName("PK__Tbl_User__57FB3A3AD872B7DB");
@@ -103,7 +105,9 @@ public partial class AppDbContext : DbContext
                 .HasConstraintName("FK__Tbl_UserC__UserI__3F466844");
         });
 
-        modelBuilder.Entity<TblUserElementScore>(entity =>
+		#endregion
+
+		modelBuilder.Entity<TblUserElementScore>(entity =>
         {
             entity.HasKey(e => e.UserElementId).HasName("PK__Tbl_User__7714DDB1CCB71C04");
 
