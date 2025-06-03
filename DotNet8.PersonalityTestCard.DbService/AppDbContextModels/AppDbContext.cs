@@ -56,6 +56,8 @@ public partial class AppDbContext : DbContext
 
 		#endregion
 
+		#region TblElement
+
 		modelBuilder.Entity<TblElement>(entity =>
         {
             entity.HasKey(e => e.ElementId).HasName("PK__Tbl_Elem__A429721ADF8C41CB");
@@ -65,7 +67,9 @@ public partial class AppDbContext : DbContext
             entity.Property(e => e.ElementName).HasMaxLength(50);
         });
 
-        modelBuilder.Entity<TblUser>(entity =>
+		#endregion
+
+		modelBuilder.Entity<TblUser>(entity =>
         {
             entity.HasKey(e => e.UserId).HasName("PK__Tbl_User__1788CC4CA48AC4B0");
 
