@@ -107,6 +107,8 @@ public partial class AppDbContext : DbContext
 
 		#endregion
 
+		#region TblUserElementScore
+
 		modelBuilder.Entity<TblUserElementScore>(entity =>
         {
             entity.HasKey(e => e.UserElementId).HasName("PK__Tbl_User__7714DDB1CCB71C04");
@@ -124,7 +126,9 @@ public partial class AppDbContext : DbContext
                 .HasConstraintName("FK__Tbl_User___UserI__4316F928");
         });
 
-        OnModelCreatingPartial(modelBuilder);
+		#endregion
+
+		OnModelCreatingPartial(modelBuilder);
     }
 
     partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
