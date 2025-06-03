@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace DotNet8.PersonalityTestCard.DbService.AppDbContextModels;
+﻿namespace DotNet8.PersonalityTestCard.DbService.AppDbContextModels;
 
 public partial class TblUserElementScore
 {
