@@ -1,5 +1,7 @@
 ﻿namespace DotNet8.PersonalityTestCard.DbService.AppDbContextModels;
 
+#region TblUserCard
+
 public partial class TblUserCard
 {
     public int UserCardId { get; set; }
@@ -12,3 +14,5 @@ public partial class TblUserCard
 
     public virtual TblUser User { get; set; } = null!;
 }
+
+#endregion
