@@ -1,6 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
-
-namespace DotNet8.PersonalityTestCard.DbService.AppDbContextModels;
+﻿namespace DotNet8.PersonalityTestCard.DbService.AppDbContextModels;
 
 public partial class AppDbContext : DbContext
 {
