@@ -1,0 +1,6 @@
+@DotNet8.PersonalityTestCard.Api_HostAddress = http://localhost:5215
+
+GET {{DotNet8.PersonalityTestCard.Api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
