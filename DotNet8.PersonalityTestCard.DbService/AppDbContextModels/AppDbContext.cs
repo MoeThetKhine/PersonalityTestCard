@@ -37,7 +37,10 @@ public partial class AppDbContext : DbContext
 
 	protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        modelBuilder.Entity<TblCard>(entity =>
+
+		#region TblCard
+
+		modelBuilder.Entity<TblCard>(entity =>
         {
             entity.HasKey(e => e.CardId).HasName("PK__Tbl_Card__55FECDAE5060606C");
 
@@ -51,7 +54,9 @@ public partial class AppDbContext : DbContext
                 .HasConstraintName("FK__Tbl_Card__Elemen__398D8EEE");
         });
 
-        modelBuilder.Entity<TblElement>(entity =>
+		#endregion
+
+		modelBuilder.Entity<TblElement>(entity =>
         {
             entity.HasKey(e => e.ElementId).HasName("PK__Tbl_Elem__A429721ADF8C41CB");
 
