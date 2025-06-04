@@ -10,4 +10,10 @@
     <ProjectReference Include="..\DotNet8.PersonalityTestCard.DbService\DotNet8.PersonalityTestCard.DbService.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Setup\UserElementScore\" />
+    <Folder Include="Setup\User\" />
+    <Folder Include="Setup\UserCard\" />
+  </ItemGroup>
+
 </Project>
