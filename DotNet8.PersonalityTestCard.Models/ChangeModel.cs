@@ -1,6 +1,5 @@
-﻿namespace DotNet8.PersonalityTestCard.Models
+﻿namespace DotNet8.PersonalityTestCard.Models;
+
+internal class ChangeModel
 {
-	internal class ChangeModel
-	{
-	}
 }
