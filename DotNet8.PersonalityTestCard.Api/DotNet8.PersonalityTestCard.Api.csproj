@@ -23,7 +23,16 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
+    <Folder Include="Controllers\Card\" />
+    <Folder Include="Controllers\Element\" />
+    <Folder Include="Controllers\UserCard\" />
+    <Folder Include="Controllers\UserElementScore\" />
+    <Folder Include="Controllers\User\" />
+    <Folder Include="Features\Card\" />
+    <Folder Include="Features\Element\" />
+    <Folder Include="Features\UserElementScore\" />
+    <Folder Include="Features\UserCard\" />
+    <Folder Include="Features\User\" />
   </ItemGroup>
 
   <ItemGroup>
