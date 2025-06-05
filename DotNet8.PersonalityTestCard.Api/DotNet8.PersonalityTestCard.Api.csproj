@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
@@ -23,11 +23,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\Card\" />
-    <Folder Include="Controllers\Element\" />
-    <Folder Include="Controllers\UserCard\" />
-    <Folder Include="Controllers\UserElementScore\" />
-    <Folder Include="Controllers\User\" />
     <Folder Include="Features\Card\Command\" />
     <Folder Include="Features\Card\Queries\" />
     <Folder Include="Features\Element\Command\" />
@@ -38,7 +33,6 @@
     <Folder Include="Features\UserElementScore\Queries\" />
     <Folder Include="Features\User\Command\" />
     <Folder Include="Features\User\Queries\" />
-    <Folder Include="Repositories\UserElementScore\" />
   </ItemGroup>
 
   <ItemGroup>
