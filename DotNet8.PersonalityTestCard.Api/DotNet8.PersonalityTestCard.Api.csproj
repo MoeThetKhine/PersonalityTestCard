@@ -28,11 +28,17 @@
     <Folder Include="Controllers\UserCard\" />
     <Folder Include="Controllers\UserElementScore\" />
     <Folder Include="Controllers\User\" />
-    <Folder Include="Features\Card\" />
-    <Folder Include="Features\Element\" />
-    <Folder Include="Features\UserElementScore\" />
-    <Folder Include="Features\UserCard\" />
-    <Folder Include="Features\User\" />
+    <Folder Include="Features\Card\Command\" />
+    <Folder Include="Features\Card\Queries\" />
+    <Folder Include="Features\Element\Command\" />
+    <Folder Include="Features\Element\Queries\" />
+    <Folder Include="Features\UserCard\Command\" />
+    <Folder Include="Features\UserCard\Queries\" />
+    <Folder Include="Features\UserElementScore\Command\" />
+    <Folder Include="Features\UserElementScore\Queries\" />
+    <Folder Include="Features\User\Command\" />
+    <Folder Include="Features\User\Queries\" />
+    <Folder Include="Repositories\UserElementScore\" />
   </ItemGroup>
 
   <ItemGroup>
