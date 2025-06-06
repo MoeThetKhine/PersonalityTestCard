@@ -23,10 +23,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Features\Card\Command\" />
-    <Folder Include="Features\Card\Queries\" />
-    <Folder Include="Features\Element\Command\" />
-    <Folder Include="Features\Element\Queries\" />
+    <Folder Include="Features\Card\Queries\GetCardList\" />
+    <Folder Include="Features\Element\Queries\GetElementList\" />
     <Folder Include="Features\UserCard\Command\" />
     <Folder Include="Features\UserCard\Queries\" />
     <Folder Include="Features\UserElementScore\Command\" />
