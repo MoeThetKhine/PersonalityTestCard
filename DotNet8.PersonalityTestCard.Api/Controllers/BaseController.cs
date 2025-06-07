@@ -24,5 +24,10 @@ namespace DotNet8.PersonalityTestCard.Api.Controllers
 			return StatusCode(201, message);
 		}
 
+		protected IActionResult Accepted(string message)
+		{
+			return StatusCode(202, message);
+		}
+
 	}
 }
