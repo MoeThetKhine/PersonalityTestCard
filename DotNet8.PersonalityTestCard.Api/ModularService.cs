@@ -1,9 +1,4 @@
-﻿using DotNet8.PersonalityTestCard.Api.Repositories.Blog;
-using DotNet8.PersonalityTestCard.Api.Repositories.Card;
-using DotNet8.PersonalityTestCard.DbService.AppDbContextModels;
-using Microsoft.EntityFrameworkCore;
-
-namespace DotNet8.PersonalityTestCard.Api
+﻿namespace DotNet8.PersonalityTestCard.Api
 {
 	public static class ModularService
 	{
