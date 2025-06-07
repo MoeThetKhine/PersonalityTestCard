@@ -1,5 +1,7 @@
 ﻿using DotNet8.PersonalityTestCard.Api.Repositories.Blog;
 using DotNet8.PersonalityTestCard.Api.Repositories.Card;
+using DotNet8.PersonalityTestCard.DbService.AppDbContextModels;
+using Microsoft.EntityFrameworkCore;
 
 namespace DotNet8.PersonalityTestCard.Api
 {
@@ -17,5 +19,14 @@ namespace DotNet8.PersonalityTestCard.Api
 			return services;
 		}
 
+		private static IServiceCollection AddDbContextService(this IServiceCollection services, WebApplicationBuilder builder)
+		{
+			builder.Services.AddDbContext<AppDbContext>(opt =>
+			{
+				opt.UseSqlServer(builder.Configuration.GetConnectionString("DbConnection"));
+			}, ServiceLifetime.Transient);
+
+			return services;
+		}
 	}
 }
