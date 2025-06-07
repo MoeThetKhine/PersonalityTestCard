@@ -3,6 +3,8 @@
 public static class ChangeModel
 {
 
+	#region CardListModel
+
 	public static CardListModel Change(this CardListModel dataModel)
 	{
 		return new CardListModel
@@ -13,5 +15,6 @@ public static class ChangeModel
 		};
 	}
 
+	#endregion
 
 }
