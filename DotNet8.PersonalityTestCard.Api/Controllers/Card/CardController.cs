@@ -1,6 +1,4 @@
-﻿using DotNet8.PersonalityTestCard.Api.Features.Card.Queries.GetCardList;
-using MediatR;
-
+﻿
 namespace DotNet8.PersonalityTestCard.Api.Controllers.Card;
 
 [Route("api/[controller]")]
