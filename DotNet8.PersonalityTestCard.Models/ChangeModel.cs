@@ -1,5 +1,4 @@
-﻿using DotNet8.PersonalityTestCard.DbService.AppDbContextModels;
-using DotNet8.PersonalityTestCard.Models.Setup.Card;
+﻿using DotNet8.PersonalityTestCard.Models.Setup.Card;
 
 namespace DotNet8.PersonalityTestCard.Models;
 
