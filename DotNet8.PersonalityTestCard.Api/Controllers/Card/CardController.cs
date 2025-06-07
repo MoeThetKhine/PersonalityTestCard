@@ -14,6 +14,8 @@ namespace DotNet8.PersonalityTestCard.Api.Controllers.Card
 			_mediator = mediator;
 		}
 
+		#region GetCardAsync
+
 		[HttpGet]
 		public async Task<IActionResult> GetCardAsync()
 		{
@@ -29,5 +31,7 @@ namespace DotNet8.PersonalityTestCard.Api.Controllers.Card
 				return InternalServerError(ex);
 			}
 		}
+
+		#endregion
 	}
 }
