@@ -28,5 +28,11 @@ namespace DotNet8.PersonalityTestCard.Api
 
 			return services;
 		}
+
+		private static IServiceCollection AddMediatRService(this IServiceCollection services)
+		{
+			services.AddMediatR(cf => cf.RegisterServicesFromAssembly(typeof(Program).Assembly));
+			return services;
+		}
 	}
 }
