@@ -1,4 +1,6 @@
-﻿namespace DotNet8.PersonalityTestCard.Api;
+﻿using DotNet8.PersonalityTestCard.Api.Repositories.Element;
+
+namespace DotNet8.PersonalityTestCard.Api;
 
 public static class ModularService
 {
@@ -21,7 +23,10 @@ public static class ModularService
 
 	private static IServiceCollection AddRepositoryServices(this IServiceCollection services)
 	{
-		services.AddScoped<ICardRepository, CardRepository>();
+		services
+			.AddScoped<ICardRepository, CardRepository>()
+			.AddScoped<IElementRepository, ElementRepository>();
+
 		return services;
 	}
 
