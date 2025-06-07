@@ -1,7 +1,5 @@
 ﻿using DotNet8.PersonalityTestCard.Api.Features.Card.Queries.GetCardList;
 using MediatR;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
 
 namespace DotNet8.PersonalityTestCard.Api.Controllers.Card
 {
