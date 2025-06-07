@@ -1,9 +1,8 @@
-﻿namespace DotNet8.PersonalityTestCard.Models.Setup.Element
-{
-	public class ElementListModel
-	{
-		public int ElementId { get; set; }
+﻿namespace DotNet8.PersonalityTestCard.Models.Setup.Element;
 
-		public string ElementName { get; set; } = null!;
-	}
+public class ElementListModel
+{
+	public int ElementId { get; set; }
+
+	public string ElementName { get; set; } = null!;
 }
