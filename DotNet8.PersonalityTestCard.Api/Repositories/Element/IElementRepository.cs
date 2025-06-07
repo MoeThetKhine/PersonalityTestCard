@@ -2,5 +2,5 @@
 
 public interface IElementRepository
 {
-	Task<ElementListResponseModel> GetCardsAsync();
+	Task<ElementListResponseModel> GetElementAsync();
 }
