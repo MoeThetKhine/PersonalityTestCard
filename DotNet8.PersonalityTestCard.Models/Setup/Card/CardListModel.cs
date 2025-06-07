@@ -1,13 +1,12 @@
-﻿namespace DotNet8.PersonalityTestCard.Models.Setup.Card
+﻿namespace DotNet8.PersonalityTestCard.Models.Setup.Card;
+
+public class CardListModel
 {
-	public class CardListModel
-	{
-		public int CardId { get; set; }
+	public int CardId { get; set; }
 
-		public string CardName { get; set; } = null!;
+	public string CardName { get; set; } = null!;
 
-		public int ElementId { get; set; }
+	public int ElementId { get; set; }
 
 
-	}
 }
