@@ -35,9 +35,13 @@ public class BaseController : ControllerBase
 
 	#endregion
 
+	#region Accepted
+
 	protected IActionResult Accepted(string message)
 	{
 		return StatusCode(202, message);
 	}
+
+	#endregion
 
 }
