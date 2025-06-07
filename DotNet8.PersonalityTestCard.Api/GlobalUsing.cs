@@ -8,5 +8,3 @@ global using DotNet8.PersonalityTestCard.Api.Features.Card.Queries.GetCardList;
 global using MediatR;
 global using DotNet8.PersonalityTestCard.Api;
 global using DotNet8.PersonalityTestCard.Models.Setup.Card;
-
-

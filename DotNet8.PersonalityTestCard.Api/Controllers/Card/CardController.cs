@@ -1,5 +1,4 @@
-﻿
-namespace DotNet8.PersonalityTestCard.Api.Controllers.Card;
+﻿namespace DotNet8.PersonalityTestCard.Api.Controllers.Card;
 
 [Route("api/[controller]")]
 [ApiController]
