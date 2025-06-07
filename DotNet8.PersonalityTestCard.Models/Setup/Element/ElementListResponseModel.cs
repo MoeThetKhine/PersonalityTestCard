@@ -1,7 +1,6 @@
-﻿namespace DotNet8.PersonalityTestCard.Models.Setup.Element
+﻿namespace DotNet8.PersonalityTestCard.Models.Setup.Element;
+
+public class ElementListResponseModel
 {
-	public class ElementListResponseModel
-	{
-		public List<ElementListModel> DataLst { get; set; }
-	}
+	public List<ElementListModel> DataLst { get; set; }
 }
