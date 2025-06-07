@@ -1,5 +1,4 @@
-﻿using DotNet8.PersonalityTestCard.Models;
-
+﻿
 namespace DotNet8.PersonalityTestCard.Api.Repositories.Card;
 
 public class CardRepository : ICardRepository
