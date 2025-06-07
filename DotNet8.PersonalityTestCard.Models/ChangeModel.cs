@@ -1,4 +1,6 @@
-﻿namespace DotNet8.PersonalityTestCard.Models;
+﻿using DotNet8.PersonalityTestCard.Models.Setup.Element;
+
+namespace DotNet8.PersonalityTestCard.Models;
 
 public static class ChangeModel
 {
@@ -16,4 +18,13 @@ public static class ChangeModel
 	}
 
 	#endregion
+
+	public static ElementListModel Change(this TblElement dataModel)
+	{
+		return new ElementListModel
+		{
+			ElementId = dataModel.ElementId,
+			ElementName = dataModel.ElementName,
+		};
+	}
 }
