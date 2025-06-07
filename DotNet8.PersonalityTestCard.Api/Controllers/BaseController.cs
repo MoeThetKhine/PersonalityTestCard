@@ -1,7 +1,4 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using Newtonsoft.Json;
-
-namespace DotNet8.PersonalityTestCard.Api.Controllers;
+﻿namespace DotNet8.PersonalityTestCard.Api.Controllers;
 
 [Route("api/[controller]")]
 [ApiController]
