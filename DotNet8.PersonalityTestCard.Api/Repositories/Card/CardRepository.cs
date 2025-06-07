@@ -1,6 +1,4 @@
-﻿using DotNet8.PersonalityTestCard.Api.Repositories.Card;
-using DotNet8.PersonalityTestCard.Models.Setup.Card;
-using DotNet8.PersonalityTestCard.Models;
+﻿using DotNet8.PersonalityTestCard.Models;
 
 namespace DotNet8.PersonalityTestCard.Api.Repositories.Blog
 {
