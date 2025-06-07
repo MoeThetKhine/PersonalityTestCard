@@ -1,5 +1,4 @@
-﻿
-namespace DotNet8.PersonalityTestCard.Models;
+﻿namespace DotNet8.PersonalityTestCard.Models;
 
 public static class ChangeModel
 {
