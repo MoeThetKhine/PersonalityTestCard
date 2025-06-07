@@ -10,7 +10,12 @@ namespace DotNet8.PersonalityTestCard.Api
 
 		public static IServiceCollection AddService(this IServiceCollection services, WebApplicationBuilder builder)
 		{
-	
+			services.AddRepositoryServices()
+			.AddDbContextService(builder)
+			.AddMediatRService()
+			.AddJsonServices();
+
+			return services;
 		}
 
 		private static IServiceCollection AddRepositoryServices(this IServiceCollection services)
