@@ -3,6 +3,8 @@
 public static class ModularService
 {
 
+	#region AddService
+
 	public static IServiceCollection AddService(this IServiceCollection services, WebApplicationBuilder builder)
 	{
 		services.AddRepositoryServices()
@@ -12,6 +14,8 @@ public static class ModularService
 
 		return services;
 	}
+
+	#endregion
 
 	private static IServiceCollection AddRepositoryServices(this IServiceCollection services)
 	{
