@@ -1,7 +1,6 @@
-﻿namespace DotNet8.PersonalityTestCard.Api.Repositories.Card
+﻿namespace DotNet8.PersonalityTestCard.Api.Repositories.Card;
+
+public interface ICardRepository
 {
-	public interface ICardRepository
-	{
-		Task<CardListResponseModel> GetCardsAsync();
-	}
+	Task<CardListResponseModel> GetCardsAsync();
 }
