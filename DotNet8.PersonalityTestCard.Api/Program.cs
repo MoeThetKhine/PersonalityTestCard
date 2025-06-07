@@ -1,5 +1,3 @@
-using DotNet8.PersonalityTestCard.Api; 
-
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
