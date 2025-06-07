@@ -12,6 +12,8 @@ namespace DotNet8.PersonalityTestCard.Api.Repositories.Blog
 			_appDbContext = appDbContext;
 		}
 
+		#region GetCardsAsync
+
 		public async Task<CardListResponseModel> GetCardsAsync()
 		{
 			try
@@ -34,5 +36,7 @@ namespace DotNet8.PersonalityTestCard.Api.Repositories.Blog
 				throw new Exception(ex.Message);
 			}
 		}
+
+		#endregion
 	}
 }
