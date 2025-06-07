@@ -26,10 +26,14 @@ public class BaseController : ControllerBase
 
 	#endregion
 
+	#region Created
+
 	protected IActionResult Created(string message)
 	{
 		return StatusCode(201, message);
 	}
+
+	#endregion
 
 	protected IActionResult Accepted(string message)
 	{
