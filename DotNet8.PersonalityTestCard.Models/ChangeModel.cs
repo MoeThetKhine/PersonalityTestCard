@@ -19,6 +19,8 @@ public static class ChangeModel
 
 	#endregion
 
+	#region ElementListModel
+
 	public static ElementListModel Change(this TblElement dataModel)
 	{
 		return new ElementListModel
@@ -27,4 +29,6 @@ public static class ChangeModel
 			ElementName = dataModel.ElementName,
 		};
 	}
+
+	#endregion
 }
