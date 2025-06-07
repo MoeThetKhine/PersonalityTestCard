@@ -3,6 +3,8 @@ using MediatR;
 
 namespace DotNet8.PersonalityTestCard.Api.Features.Card.Queries.GetCardList;
 
+#region GetCardListQueryHandler
+
 public class GetCardListQueryHandler : IRequestHandler<GetCardListQuery, CardListResponseModel>
 {
 	private readonly ICardRepository _cardRepository;
@@ -18,3 +20,5 @@ public class GetCardListQueryHandler : IRequestHandler<GetCardListQuery, CardLis
 		return await _cardRepository.GetCardsAsync();
 	}
 }
+
+#endregion
