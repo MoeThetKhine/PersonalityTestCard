@@ -1,6 +1,4 @@
-﻿using DotNet8.PersonalityTestCard.Models.Setup.Card;
-
-namespace DotNet8.PersonalityTestCard.Api.Features.Card.Queries.GetCardList;
+﻿namespace DotNet8.PersonalityTestCard.Api.Features.Card.Queries.GetCardList;
 
 #region GetCardListQueryHandler
 
