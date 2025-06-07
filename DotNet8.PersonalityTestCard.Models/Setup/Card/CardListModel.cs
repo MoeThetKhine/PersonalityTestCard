@@ -7,6 +7,4 @@ public class CardListModel
 	public string CardName { get; set; } = null!;
 
 	public int ElementId { get; set; }
-
-
 }
