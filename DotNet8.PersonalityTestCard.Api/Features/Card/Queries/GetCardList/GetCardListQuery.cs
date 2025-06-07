@@ -1,5 +1,8 @@
-﻿namespace DotNet8.PersonalityTestCard.Api.Features.Card.Queries.GetCardList;
+﻿using DotNet8.PersonalityTestCard.Models.Setup.Card;
+using MediatR;
 
-public class GetCardListQuery
+namespace DotNet8.PersonalityTestCard.Api.Features.Card.Queries.GetCardList;
+
+public class GetCardListQuery : IRequest<CardListResponseModel>
 {
 }
