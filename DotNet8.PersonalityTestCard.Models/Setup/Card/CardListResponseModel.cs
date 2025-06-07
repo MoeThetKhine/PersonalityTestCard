@@ -1,7 +1,6 @@
-﻿namespace DotNet8.PersonalityTestCard.Models.Setup.Card
+﻿namespace DotNet8.PersonalityTestCard.Models.Setup.Card;
+
+public class CardListResponseModel
 {
-	public class CardListResponseModel
-	{
-		public List<CardListModel> DataLst { get; set; }
-	}
+	public List<CardListModel> DataLst { get; set; }
 }
