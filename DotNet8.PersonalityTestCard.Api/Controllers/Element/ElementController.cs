@@ -13,6 +13,8 @@ namespace DotNet8.PersonalityTestCard.Api.Controllers.Element
 			_mediator = mediator;
 		}
 
+		#region GetElementAsync
+
 		[HttpGet]
 		public async Task<IActionResult> GetElementAsync()
 		{
@@ -29,5 +31,7 @@ namespace DotNet8.PersonalityTestCard.Api.Controllers.Element
 				return InternalServerError(ex);
 			}
 		}
+
+		#endregion
 	}
 }
