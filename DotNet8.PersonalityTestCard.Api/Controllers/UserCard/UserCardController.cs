@@ -1,6 +1,4 @@
-﻿using DotNet8.PersonalityTestCard.Api.Features.UserCard.Command.CreateUserCard;
-
-namespace DotNet8.PersonalityTestCard.Api.Controllers.UserCard;
+﻿namespace DotNet8.PersonalityTestCard.Api.Controllers.UserCard;
 
 [Route("api/[controller]")]
 [ApiController]
