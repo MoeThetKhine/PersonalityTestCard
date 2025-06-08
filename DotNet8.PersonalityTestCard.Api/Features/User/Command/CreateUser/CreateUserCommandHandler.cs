@@ -26,4 +26,5 @@ public class CreateUserCommandHandler : IRequestHandler<CreateUserCommand, int>
 	}
 
 	#endregion
+
 }
