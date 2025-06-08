@@ -30,6 +30,8 @@ public static class ChangeModel
 
 	#endregion
 
+	#region UserModel
+
 	public static UserModel Change(this TblUser dataModel)
 	{
 		return new UserModel
@@ -40,4 +42,6 @@ public static class ChangeModel
 			CreatedAt = dataModel.CreatedAt,
 		};
 	}
+
+	#endregion
 }
