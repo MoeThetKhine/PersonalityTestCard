@@ -1,4 +1,6 @@
-﻿namespace DotNet8.PersonalityTestCard.Api.Controllers.User;
+﻿using DotNet8.PersonalityTestCard.Api.Features.User.Command.CreateUser;
+
+namespace DotNet8.PersonalityTestCard.Api.Controllers.User;
 
 [Route("api/[controller]")]
 [ApiController]
@@ -30,5 +32,24 @@ public class UserController : BaseController
 	}
 
 	#endregion
+
+	[HttpPost]
+	public async Task<IActionResult> CreateUserAsync([FromBody] UserRequestModel requestModel)
+	{
+		try
+		{
+			var command = new CreateUserCommand()
+			{
+				userRequest = requestModel
+			};
+			int result = await _mediator.Send(command);
+
+			return result > 0 ? Created("Register Successful") : BadRequest("Creating Fail.");
+		}
+		catch (Exception ex)
+		{
+			return InternalServerError(ex);
+		}
+	}
 
 }
