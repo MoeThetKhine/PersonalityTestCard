@@ -1,4 +1,6 @@
-﻿namespace DotNet8.PersonalityTestCard.Api.Controllers.User;
+﻿using DotNet8.PersonalityTestCard.Api.Features.User.Command.UpdateUser;
+
+namespace DotNet8.PersonalityTestCard.Api.Controllers.User;
 
 [Route("api/[controller]")]
 [ApiController]
@@ -73,5 +75,40 @@ public class UserController : BaseController
 	}
 
 	#endregion
+
+	[HttpPut("{id}")]
+	public async Task<IActionResult> UpdateUserAsync([FromBody] UserRequestModel userRequestModel, int id)
+	{
+		try
+		{
+			var command = new UpdateUserCommand()
+			{
+				userRequestModel = userRequestModel,
+				UserId = id,
+			};
+
+			int result = await _mediator.Send(command);
+
+			if (result > 0)
+			{
+				return Ok(new
+				{
+					Message = "User updated successfully",
+					UserId = id
+				});
+			}
+			else
+			{
+				return NotFound(new
+				{
+					Message = $"User with ID {id} not found or update failed"
+				});
+			}
+		}
+		catch (Exception ex)
+		{
+			return InternalServerError(ex);
+		}
+	}
 
 }
