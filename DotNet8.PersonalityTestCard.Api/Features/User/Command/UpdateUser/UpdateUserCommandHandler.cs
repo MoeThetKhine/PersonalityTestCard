@@ -9,6 +9,8 @@ public class UpdateUserCommandHandler : IRequestHandler<UpdateUserCommand , int>
 		this._userRepository = userRepository;
 	}
 
+	#region Handle
+
 	public async Task<int> Handle(UpdateUserCommand request, CancellationToken cancellationToken)
 	{
 		if(request.UserId <= 0)
@@ -18,4 +20,6 @@ public class UpdateUserCommandHandler : IRequestHandler<UpdateUserCommand , int>
 
 		return await _userRepository.UpdateUserAsync(request.userRequestModel, request.UserId);
 	}
+
+	#endregion
 }
