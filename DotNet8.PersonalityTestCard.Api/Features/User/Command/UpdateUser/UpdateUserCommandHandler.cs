@@ -1,6 +1,5 @@
-﻿namespace DotNet8.PersonalityTestCard.Api.Features.User.Command.UpdateUser
+﻿namespace DotNet8.PersonalityTestCard.Api.Features.User.Command.UpdateUser;
+
+public class UpdateUserCommandHandler
 {
-	public class UpdateUserCommandHandler
-	{
-	}
 }
