@@ -37,7 +37,6 @@ public class UserRepository : IUserRepository
 
 	#endregion
 
-
 	#region CreateUserAsync
 
 	public async Task<int> CreateUserAsync(UserRequestModel requestModel)
