@@ -1,7 +1,4 @@
-﻿using DotNet8.PersonalityTestCard.Api.Repositories.Element;
-using DotNet8.PersonalityTestCard.Api.Repositories.User;
-
-namespace DotNet8.PersonalityTestCard.Api;
+﻿namespace DotNet8.PersonalityTestCard.Api;
 
 public static class ModularService
 {
