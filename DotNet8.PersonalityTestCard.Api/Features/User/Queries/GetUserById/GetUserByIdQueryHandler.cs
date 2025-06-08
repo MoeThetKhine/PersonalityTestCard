@@ -10,6 +10,8 @@ public class GetUserByIdQueryHandler : IRequestHandler<GetUserByIdQuery, UserMod
 		_userRepository = userRepository;
 	}
 
+	#region Handle
+
 	public async Task<UserModel> Handle(GetUserByIdQuery request, CancellationToken cancellationToken)
 	{
 		if (request.UserId <= 0)
@@ -17,4 +19,6 @@ public class GetUserByIdQueryHandler : IRequestHandler<GetUserByIdQuery, UserMod
 
 		return await _userRepository.GetUserByIdAsync(request.UserId);
 	}
+
+	#endregion
 }
