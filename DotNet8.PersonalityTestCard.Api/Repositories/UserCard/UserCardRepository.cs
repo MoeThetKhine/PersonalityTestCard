@@ -1,6 +1,5 @@
-﻿namespace DotNet8.PersonalityTestCard.Api.Repositories.UserCard
+﻿namespace DotNet8.PersonalityTestCard.Api.Repositories.UserCard;
+
+public class UserCardRepository
 {
-	public class UserCardRepository
-	{
-	}
 }
