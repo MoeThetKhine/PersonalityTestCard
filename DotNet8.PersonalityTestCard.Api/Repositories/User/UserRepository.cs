@@ -89,11 +89,7 @@ public class UserRepository : IUserRepository
 			{
 				item.Username = requestModel.Username;
 			}
-			if (!string.IsNullOrEmpty(requestModel.Email))
-			{
-				item.Email = requestModel.Email;
-			}
-
+			
 			_context.Entry(item).State = EntityState.Modified;
 			return await _context.SaveChangesAsync();
 		}
