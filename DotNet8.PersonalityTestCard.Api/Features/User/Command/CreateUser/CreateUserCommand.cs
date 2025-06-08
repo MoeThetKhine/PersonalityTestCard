@@ -1,6 +1,5 @@
-﻿namespace DotNet8.PersonalityTestCard.Api.Features.User.Command.CreateUser
+﻿namespace DotNet8.PersonalityTestCard.Api.Features.User.Command.CreateUser;
+
+public class CreateUserCommand
 {
-	public class CreateUserCommand
-	{
-	}
 }
