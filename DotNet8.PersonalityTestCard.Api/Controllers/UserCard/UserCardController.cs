@@ -1,8 +1,7 @@
-﻿namespace DotNet8.PersonalityTestCard.Api.Controllers.UserCard
+﻿namespace DotNet8.PersonalityTestCard.Api.Controllers.UserCard;
+
+[Route("api/[controller]")]
+[ApiController]
+public class UserCardController : ControllerBase
 {
-	[Route("api/[controller]")]
-	[ApiController]
-	public class UserCardController : ControllerBase
-	{
-	}
 }
