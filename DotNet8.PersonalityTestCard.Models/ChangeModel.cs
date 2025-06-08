@@ -44,4 +44,13 @@ public static class ChangeModel
 	}
 
 	#endregion
+
+	public static TblUser Change(this UserRequestModel requestModel)
+	{
+		return new TblUser
+		{
+			Username = requestModel.Username,
+			Email = requestModel.Email,
+		};
+	}
 }
