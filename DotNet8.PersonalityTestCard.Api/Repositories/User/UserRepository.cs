@@ -37,6 +37,8 @@ public class UserRepository : IUserRepository
 
 	#endregion
 
+	#region CreateUserAsync
+
 	public async Task<int> CreateUserAsync(UserRequestModel requestModel)
 	{
 		try
@@ -49,4 +51,6 @@ public class UserRepository : IUserRepository
 			throw new Exception(ex.Message);
 		}
 	}
+
+	#endregion
 }
