@@ -73,5 +73,32 @@ public class UserRepository : IUserRepository
 		}
 	}
 
+	public async Task<int> UpdateUserAsync(UserRequestModel requestModel, int id)
+	{
+		try
+		{
+			var item = await _context.TblUsers
+				.AsNoTracking()
+				.FirstOrDefaultAsync(x => x.UserId == id) ?? throw new Exception("Blog Id cannot be empty.");
+
+			if (!string.IsNullOrEmpty(requestModel.Username))
+			{
+				item.Username = requestModel.Username;
+			}
+			if (!string.IsNullOrEmpty(requestModel.Email))
+			{
+				item.Email = requestModel.Email;
+			}
+
+			_context.Entry(item).State = EntityState.Modified;
+			return await _context.SaveChangesAsync();
+		}
+		catch (Exception ex)
+		{
+			throw new Exception(ex.Message);
+		}
+
+	}
+
 	#endregion
 }
