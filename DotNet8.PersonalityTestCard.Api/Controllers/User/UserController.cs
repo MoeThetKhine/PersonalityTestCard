@@ -1,5 +1,4 @@
-﻿using DotNet8.PersonalityTestCard.Api.Features.User.Queries.GetUserList;
-
+﻿
 namespace DotNet8.PersonalityTestCard.Api.Controllers.User;
 
 [Route("api/[controller]")]
