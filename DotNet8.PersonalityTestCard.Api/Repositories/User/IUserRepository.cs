@@ -3,4 +3,5 @@
 public interface IUserRepository
 {
 	Task<UserListResponseModel> GetUserListAsync();
+	Task<int> CreateUserAsync(UserRequestModel requestModel);
 }
