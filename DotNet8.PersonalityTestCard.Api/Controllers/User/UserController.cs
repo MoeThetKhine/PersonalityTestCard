@@ -1,4 +1,6 @@
-﻿namespace DotNet8.PersonalityTestCard.Api.Controllers.User;
+﻿using DotNet8.PersonalityTestCard.Api.Features.User.Queries.GetUserById;
+
+namespace DotNet8.PersonalityTestCard.Api.Controllers.User;
 
 [Route("api/[controller]")]
 [ApiController]
@@ -53,5 +55,21 @@ public class UserController : BaseController
 	}
 
 	#endregion
+
+	[HttpGet("{id}")]
+	public async Task<IActionResult> GetBlogByIdAsync(int id)
+	{
+		try
+		{
+			var query = new GetUserByIdQuery() { UserId = id };
+			var item = await _mediator.Send(query);
+
+			return Content(item);
+		}
+		catch (Exception ex)
+		{
+			return InternalServerError(ex);
+		}
+	}
 
 }
