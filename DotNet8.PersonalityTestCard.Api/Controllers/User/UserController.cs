@@ -13,6 +13,8 @@ public class UserController : BaseController
 		_mediator = mediator;
 	}
 
+	#region GetUserListAsync
+
 	[HttpGet]
 	public async Task<IActionResult> GetUserListAsync()
 	{
@@ -28,4 +30,7 @@ public class UserController : BaseController
 			return InternalServerError(ex);
 		}
 	}
+
+	#endregion
+
 }
