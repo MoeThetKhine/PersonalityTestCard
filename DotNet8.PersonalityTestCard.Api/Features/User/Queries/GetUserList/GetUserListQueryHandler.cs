@@ -1,6 +1,4 @@
-﻿using DotNet8.PersonalityTestCard.Api.Repositories.User;
-
-namespace DotNet8.PersonalityTestCard.Api.Features.User.Queries.GetUserList;
+﻿namespace DotNet8.PersonalityTestCard.Api.Features.User.Queries.GetUserList;
 
 #region GetUserListQueryHandler
 
