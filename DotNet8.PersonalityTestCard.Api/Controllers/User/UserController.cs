@@ -56,6 +56,8 @@ public class UserController : BaseController
 
 	#endregion
 
+	#region GetBlogByIdAsync
+
 	[HttpGet("{id}")]
 	public async Task<IActionResult> GetBlogByIdAsync(int id)
 	{
@@ -71,5 +73,7 @@ public class UserController : BaseController
 			return InternalServerError(ex);
 		}
 	}
+
+	#endregion
 
 }
