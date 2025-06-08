@@ -11,6 +11,8 @@ namespace DotNet8.PersonalityTestCard.Api.Repositories.User
 			_context = context;
 		}
 
+		#region GetUserListAsync
+
 		public async Task<UserListResponseModel> GetUserListAsync()
 		{
 			try
@@ -34,5 +36,7 @@ namespace DotNet8.PersonalityTestCard.Api.Repositories.User
 				throw new Exception(ex.Message);
 			}
 		}
+
+		#endregion
 	}
 }
