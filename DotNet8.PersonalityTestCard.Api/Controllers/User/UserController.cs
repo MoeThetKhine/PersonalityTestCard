@@ -1,5 +1,4 @@
-﻿using DotNet8.PersonalityTestCard.Api.Features.User.Command.CreateUser;
-
+﻿
 namespace DotNet8.PersonalityTestCard.Api.Controllers.User;
 
 [Route("api/[controller]")]

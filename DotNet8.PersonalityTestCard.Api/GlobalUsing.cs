@@ -14,4 +14,4 @@ global using DotNet8.PersonalityTestCard.Models.Setup.User;
 global using DotNet8.PersonalityTestCard.Api.Repositories.User;
 global using DotNet8.PersonalityTestCard.Api.Features.Element.Queries.GetElementList;
 global using DotNet8.PersonalityTestCard.Api.Repositories.Element;
-
+global using DotNet8.PersonalityTestCard.Api.Features.User.Command.CreateUser;
