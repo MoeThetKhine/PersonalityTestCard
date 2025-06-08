@@ -37,6 +37,7 @@ public class UserRepository : IUserRepository
 
 	#endregion
 
+
 	#region CreateUserAsync
 
 	public async Task<int> CreateUserAsync(UserRequestModel requestModel)
@@ -53,4 +54,22 @@ public class UserRepository : IUserRepository
 	}
 
 	#endregion
+
+
+	public async Task<UserModel> GetUserByIdAsync(int id)
+	{
+		try
+		{
+			var item = await _context.TblUsers
+				.AsNoTracking()
+				.FirstOrDefaultAsync(x => x.UserId == id)
+				?? throw new Exception("No data found");
+
+			return item.Change();
+		}
+		catch (Exception ex)
+		{
+			throw new Exception(ex.Message);
+		}
+	}
 }
