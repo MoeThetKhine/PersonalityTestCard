@@ -73,6 +73,10 @@ public class UserRepository : IUserRepository
 		}
 	}
 
+	#endregion
+
+	#region UpdateUserAsync
+
 	public async Task<int> UpdateUserAsync(UserRequestModel requestModel, int id)
 	{
 		try
@@ -97,8 +101,8 @@ public class UserRepository : IUserRepository
 		{
 			throw new Exception(ex.Message);
 		}
-
 	}
 
 	#endregion
+
 }
