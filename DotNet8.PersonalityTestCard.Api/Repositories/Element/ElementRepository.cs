@@ -9,6 +9,8 @@ public class ElementRepository : IElementRepository
 		_appDbContext = appDbContext;
 	}
 
+	#region GetElementAsync
+
 	public async Task<ElementListResponseModel> GetElementAsync()
 	{
 		try
@@ -31,6 +33,7 @@ public class ElementRepository : IElementRepository
 		{
 			throw new Exception(ex.Message);
 		}
-
 	}
+
+	#endregion
 }
