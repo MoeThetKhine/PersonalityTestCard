@@ -13,6 +13,8 @@ public class UserCardController : BaseController
 		_mediator = mediator;
 	}
 
+	#region CreateUserCardAsync
+
 	[HttpPost("{userId}")]
 	public async Task<IActionResult> CreateUserCardAsync(int userId, [FromBody] List<int> cardIds)
 	{
@@ -35,4 +37,6 @@ public class UserCardController : BaseController
 			return InternalServerError(ex);
 		}
 	}
+
+	#endregion
 }
