@@ -1,10 +1,9 @@
-﻿namespace DotNet8.PersonalityTestCard.Models.Setup.User
+﻿namespace DotNet8.PersonalityTestCard.Models.Setup.User;
+
+public class UserRequestModel
 {
-	public class UserRequestModel
-	{
-		public string Username { get; set; } = null!;
+	public string Username { get; set; } = null!;
 
-		public string Email { get; set; } = null!;
+	public string Email { get; set; } = null!;
 
-	}
 }
