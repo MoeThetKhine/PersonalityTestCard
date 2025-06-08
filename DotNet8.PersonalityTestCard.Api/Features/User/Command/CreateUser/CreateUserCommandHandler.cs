@@ -9,6 +9,8 @@ public class CreateUserCommandHandler : IRequestHandler<CreateUserCommand, int>
 		_userRepository = userRepository;
 	}
 
+	#region Handle
+
 	public async Task<int> Handle(CreateUserCommand request, CancellationToken cancellationToken)
 	{
 		if(string.IsNullOrEmpty(request.userRequest.Username))
@@ -22,4 +24,6 @@ public class CreateUserCommandHandler : IRequestHandler<CreateUserCommand, int>
 
 		return await _userRepository.CreateUserAsync(request.userRequest);
 	}
+
+	#endregion
 }
