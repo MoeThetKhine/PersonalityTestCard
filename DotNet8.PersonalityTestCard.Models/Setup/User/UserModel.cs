@@ -1,13 +1,12 @@
-﻿namespace DotNet8.PersonalityTestCard.Models.Setup.User
+﻿namespace DotNet8.PersonalityTestCard.Models.Setup.User;
+
+public class UserModel
 {
-	public class UserModel
-	{
-		public int UserId { get; set; }
+	public int UserId { get; set; }
 
-		public string Username { get; set; } = null!;
+	public string Username { get; set; } = null!;
 
-		public string Email { get; set; } = null!;
+	public string Email { get; set; } = null!;
 
-		public DateTime CreatedAt { get; set; }
-	}
+	public DateTime CreatedAt { get; set; }
 }
