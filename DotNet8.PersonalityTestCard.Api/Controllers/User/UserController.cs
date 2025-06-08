@@ -33,6 +33,8 @@ public class UserController : BaseController
 
 	#endregion
 
+	#region CreateUserAsync
+
 	[HttpPost]
 	public async Task<IActionResult> CreateUserAsync([FromBody] UserRequestModel requestModel)
 	{
@@ -51,5 +53,7 @@ public class UserController : BaseController
 			return InternalServerError(ex);
 		}
 	}
+
+	#endregion
 
 }
