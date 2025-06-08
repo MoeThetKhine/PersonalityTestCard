@@ -1,7 +1,6 @@
-﻿namespace DotNet8.PersonalityTestCard.Api.Repositories.User
+﻿namespace DotNet8.PersonalityTestCard.Api.Repositories.User;
+
+public interface IUserRepository
 {
-	public interface IUserRepository
-	{
-		Task<UserListResponseModel> GetUserListAsync();
-	}
+	Task<UserListResponseModel> GetUserListAsync();
 }
