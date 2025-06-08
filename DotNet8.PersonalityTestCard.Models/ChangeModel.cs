@@ -1,4 +1,6 @@
-﻿namespace DotNet8.PersonalityTestCard.Models;
+﻿using DotNet8.PersonalityTestCard.Models.Setup.User;
+
+namespace DotNet8.PersonalityTestCard.Models;
 
 public static class ChangeModel
 {
@@ -29,4 +31,15 @@ public static class ChangeModel
 	}
 
 	#endregion
+
+	public static UserModel Change(this TblUser dataModel)
+	{
+		return new UserModel
+		{
+			UserId = dataModel.UserId,
+			Username = dataModel.Username,
+			Email = dataModel.Email,
+			CreatedAt = dataModel.CreatedAt,
+		};
+	}
 }
