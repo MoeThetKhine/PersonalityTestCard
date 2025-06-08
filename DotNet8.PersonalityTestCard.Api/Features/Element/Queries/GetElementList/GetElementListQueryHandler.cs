@@ -1,6 +1,6 @@
-﻿using DotNet8.PersonalityTestCard.Api.Repositories.Element;
+﻿namespace DotNet8.PersonalityTestCard.Api.Features.Element.Queries.GetElementList;
 
-namespace DotNet8.PersonalityTestCard.Api.Features.Element.Queries.GetElementList;
+#region GetElementListQueryHandler
 
 public class GetElementListQueryHandler : IRequestHandler<GetElementListQuery, ElementListResponseModel>
 {
@@ -16,3 +16,5 @@ public class GetElementListQueryHandler : IRequestHandler<GetElementListQuery, E
 		return await _elementRepository.GetElementAsync();
 	}
 }
+
+#endregion
