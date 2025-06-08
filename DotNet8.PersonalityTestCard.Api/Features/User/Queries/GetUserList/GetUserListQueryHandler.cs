@@ -2,6 +2,8 @@
 
 namespace DotNet8.PersonalityTestCard.Api.Features.User.Queries.GetUserList;
 
+#region GetUserListQueryHandler
+
 public class GetUserListQueryHandler : IRequestHandler<GetUserListQuery, UserListResponseModel>
 {
 	private readonly IUserRepository _userRepository;
@@ -16,3 +18,5 @@ public class GetUserListQueryHandler : IRequestHandler<GetUserListQuery, UserLis
 		return await _userRepository.GetUserListAsync();
 	}
 }
+
+#endregion
