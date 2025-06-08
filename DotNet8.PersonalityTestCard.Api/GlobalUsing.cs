@@ -10,5 +10,3 @@ global using DotNet8.PersonalityTestCard.Models.Setup.Card;
 global using DotNet8.PersonalityTestCard.Models;
 global using DotNet8.PersonalityTestCard.Models.Setup.Element;
 global using DotNet8.PersonalityTestCard.Api.Features.User.Queries.GetUserList;
-
-
