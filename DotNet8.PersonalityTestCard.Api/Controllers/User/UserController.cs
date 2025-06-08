@@ -1,6 +1,4 @@
-﻿using DotNet8.PersonalityTestCard.Api.Features.User.Command.UpdateUser;
-
-namespace DotNet8.PersonalityTestCard.Api.Controllers.User;
+﻿namespace DotNet8.PersonalityTestCard.Api.Controllers.User;
 
 [Route("api/[controller]")]
 [ApiController]
