@@ -1,6 +1,4 @@
-﻿using DotNet8.PersonalityTestCard.Api.Features.Element.Queries.GetElementList;
-
-namespace DotNet8.PersonalityTestCard.Api.Controllers.Element;
+﻿namespace DotNet8.PersonalityTestCard.Api.Controllers.Element;
 
 [Route("api/[controller]")]
 [ApiController]

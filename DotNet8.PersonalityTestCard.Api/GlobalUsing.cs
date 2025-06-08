@@ -12,3 +12,5 @@ global using DotNet8.PersonalityTestCard.Models.Setup.Element;
 global using DotNet8.PersonalityTestCard.Api.Features.User.Queries.GetUserList;
 global using DotNet8.PersonalityTestCard.Models.Setup.User;
 global using DotNet8.PersonalityTestCard.Api.Repositories.User;
+global using DotNet8.PersonalityTestCard.Api.Features.Element.Queries.GetElementList;
+
