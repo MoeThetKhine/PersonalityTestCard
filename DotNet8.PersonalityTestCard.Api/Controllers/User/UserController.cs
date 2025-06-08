@@ -76,6 +76,8 @@ public class UserController : BaseController
 
 	#endregion
 
+	#region UpdateUserAsync
+
 	[HttpPut("{id}")]
 	public async Task<IActionResult> UpdateUserAsync([FromBody] UserRequestModel userRequestModel, int id)
 	{
@@ -110,5 +112,7 @@ public class UserController : BaseController
 			return InternalServerError(ex);
 		}
 	}
+
+	#endregion
 
 }
