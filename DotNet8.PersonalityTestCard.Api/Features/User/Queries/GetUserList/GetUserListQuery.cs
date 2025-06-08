@@ -1,6 +1,5 @@
-﻿namespace DotNet8.PersonalityTestCard.Api.Features.User.Queries.GetUserList
+﻿namespace DotNet8.PersonalityTestCard.Api.Features.User.Queries.GetUserList;
+
+public class GetUserListQuery : IRequest<UserListResponseModel>
 {
-	public class GetUserListQuery : IRequest<UserListResponseModel>
-	{
-	}
 }
