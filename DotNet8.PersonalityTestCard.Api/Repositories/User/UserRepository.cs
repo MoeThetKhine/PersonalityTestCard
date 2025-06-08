@@ -36,4 +36,17 @@ public class UserRepository : IUserRepository
 	}
 
 	#endregion
+
+	public async Task<int> CreateUserAsync(UserRequestModel requestModel)
+	{
+		try
+		{
+			await _context.TblUsers.AddAsync(requestModel.Change());
+			return await _context.SaveChangesAsync();
+		}
+		catch (Exception ex)
+		{
+			throw new Exception(ex.Message);
+		}
+	}
 }
