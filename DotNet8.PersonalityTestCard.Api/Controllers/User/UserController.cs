@@ -1,11 +1,34 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using DotNet8.PersonalityTestCard.Api.Features.User.Queries.GetUserList;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace DotNet8.PersonalityTestCard.Api.Controllers.User
 {
 	[Route("api/[controller]")]
 	[ApiController]
-	public class UserController : ControllerBase
+	public class UserController : BaseController
 	{
+		private readonly IMediator _mediator;
+
+		public UserController(IMediator mediator)
+		{
+			_mediator = mediator;
+		}
+
+		[HttpGet]
+		public async Task<IActionResult> GetUserListAsync()
+		{
+			try
+			{
+				var query = new GetUserListQuery();
+				var lst = await _mediator.Send(query);
+
+				return Content(lst);
+			}
+			catch (Exception ex)
+			{
+				return InternalServerError(ex);
+			}
+		}
 	}
 }
