@@ -55,6 +55,7 @@ public class UserRepository : IUserRepository
 
 	#endregion
 
+	#region GetUserByIdAsync
 
 	public async Task<UserModel> GetUserByIdAsync(int id)
 	{
@@ -72,4 +73,6 @@ public class UserRepository : IUserRepository
 			throw new Exception(ex.Message);
 		}
 	}
+
+	#endregion
 }
