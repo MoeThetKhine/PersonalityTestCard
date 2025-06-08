@@ -1,6 +1,5 @@
-﻿namespace DotNet8.PersonalityTestCard.Api.Repositories.UserElementScore
+﻿namespace DotNet8.PersonalityTestCard.Api.Repositories.UserElementScore;
+
+public interface IUserElementScoreRepository
 {
-	public interface IUserElementScoreRepository
-	{
-	}
 }
