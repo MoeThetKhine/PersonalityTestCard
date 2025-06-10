@@ -11,6 +11,8 @@ public class CreateUserCardCommandHandler : IRequestHandler<CreateUserCardComman
 		_context = context;
 	}
 
+	#region Handle
+
 	public async Task<int> Handle(CreateUserCardCommand request, CancellationToken cancellationToken)
 	{
 		if (request.CardIds == null || request.CardIds.Count != 13)
@@ -61,4 +63,6 @@ public class CreateUserCardCommandHandler : IRequestHandler<CreateUserCardComman
 		return 1;
 
 	}
+
+	#endregion
 }
