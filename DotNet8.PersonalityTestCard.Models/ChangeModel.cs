@@ -19,6 +19,8 @@ public static class ChangeModel
 
 	#endregion
 
+	#region UserElementScoreModel
+
 	public static UserElementScoreModel Change(this TblUserElementScore dataModel)
 	{
 		return new UserElementScoreModel
@@ -30,6 +32,8 @@ public static class ChangeModel
 			ElementName = dataModel.Element?.ElementName!
 		};
 	}
+
+	#endregion
 
 	#region ElementListModel
 
