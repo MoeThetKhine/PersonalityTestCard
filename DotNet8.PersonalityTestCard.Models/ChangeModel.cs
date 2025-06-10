@@ -1,4 +1,6 @@
-﻿namespace DotNet8.PersonalityTestCard.Models;
+﻿using DotNet8.PersonalityTestCard.Models.Setup.UserElementScore;
+
+namespace DotNet8.PersonalityTestCard.Models;
 
 public static class ChangeModel
 {
@@ -16,6 +18,18 @@ public static class ChangeModel
 	}
 
 	#endregion
+
+	public static UserElementScoreModel Change(this TblUserElementScore dataModel)
+	{
+		return new UserElementScoreModel
+		{
+			UserElementId = dataModel.UserElementId,
+			UserId = dataModel.UserId,
+			ElementId = dataModel.ElementId,
+			Score = dataModel.Score,
+			ElementName = dataModel.Element?.ElementName!
+		};
+	}
 
 	#region ElementListModel
 
@@ -57,4 +71,5 @@ public static class ChangeModel
 	}
 
 	#endregion
+
 }
