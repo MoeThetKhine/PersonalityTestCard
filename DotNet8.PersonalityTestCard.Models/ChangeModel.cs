@@ -1,6 +1,4 @@
-﻿using DotNet8.PersonalityTestCard.Models.Setup.UserElementScore;
-
-namespace DotNet8.PersonalityTestCard.Models;
+﻿namespace DotNet8.PersonalityTestCard.Models;
 
 public static class ChangeModel
 {
