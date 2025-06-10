@@ -33,6 +33,17 @@ public static class ChangeModel
 
 	#endregion
 
+	public static UserElementScoreResponseModel ElementScoreChange(this TblUserElementScore dataModel)
+	{
+		return new UserElementScoreResponseModel
+		{
+			UserId = dataModel.UserId,
+			Username = dataModel.User?.Username!,
+			ElementName = dataModel.Element?.ElementName!,
+			Score = dataModel.Score,
+		};
+	}
+
 	#region ElementListModel
 
 	public static ElementListModel Change(this TblElement dataModel)
