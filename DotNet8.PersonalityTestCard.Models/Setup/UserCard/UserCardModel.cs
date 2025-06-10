@@ -1,5 +1,7 @@
 ﻿namespace DotNet8.PersonalityTestCard.Models.Setup.UserCard;
 
+#region UserCardModel
+
 public class UserCardModel
 {
 	public int UserCardId { get; set; }
@@ -8,3 +10,5 @@ public class UserCardModel
 
 	public int CardId { get; set; }
 }
+
+#endregion
