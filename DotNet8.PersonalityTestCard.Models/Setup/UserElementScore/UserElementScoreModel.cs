@@ -1,5 +1,7 @@
 ﻿namespace DotNet8.PersonalityTestCard.Models.Setup.UserElementScore;
 
+#region UserElementScoreModel
+
 public class UserElementScoreModel
 {
 	public int UserElementId { get; set; }
@@ -11,5 +13,6 @@ public class UserElementScoreModel
 	public int Score { get; set; }
 
 	public string ElementName { get; set; } 
-
 }
+
+#endregion
