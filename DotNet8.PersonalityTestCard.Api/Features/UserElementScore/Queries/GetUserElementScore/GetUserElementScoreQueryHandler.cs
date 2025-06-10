@@ -1,17 +1,16 @@
-﻿namespace DotNet8.PersonalityTestCard.Api.Features.UserElementScore.Queries.GetUserElementScore
+﻿namespace DotNet8.PersonalityTestCard.Api.Features.UserElementScore.Queries.GetUserElementScore;
+
+public class GetUserElementScoreQueryHandler : IRequestHandler<GetUserElementScoreQuery, UserElementScoreRequestModel>
 {
-	public class GetUserElementScoreQueryHandler : IRequestHandler<GetUserElementScoreQuery, UserElementScoreRequestModel>
+	private readonly IUserElementScoreRepository _userElementScoreRepository;
+
+	public GetUserElementScoreQueryHandler(IUserElementScoreRepository userElementScoreRepository)
 	{
-		private readonly IUserElementScoreRepository _userElementScoreRepository;
+		_userElementScoreRepository = userElementScoreRepository;
+	}
 
-		public GetUserElementScoreQueryHandler(IUserElementScoreRepository userElementScoreRepository)
-		{
-			_userElementScoreRepository = userElementScoreRepository;
-		}
-
-		public async Task<UserElementScoreRequestModel> Handle(GetUserElementScoreQuery request, CancellationToken cancellationToken)
-		{
-			return await _userElementScoreRepository.GetUserElementScoreAsync();
-		}
+	public async Task<UserElementScoreRequestModel> Handle(GetUserElementScoreQuery request, CancellationToken cancellationToken)
+	{
+		return await _userElementScoreRepository.GetUserElementScoreAsync();
 	}
 }
