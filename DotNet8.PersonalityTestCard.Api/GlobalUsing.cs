@@ -21,4 +21,6 @@ global using DotNet8.PersonalityTestCard.Api.Features.UserCard.Command.CreateUse
 global using DotNet8.PersonalityTestCard.Api.Features.UserElementScore.Queries.GetUserElementScore;
 global using DotNet8.PersonalityTestCard.Api.Repositories.UserCard;
 global using DotNet8.PersonalityTestCard.Api.Repositories.UserElementScore;
+global using DotNet8.PersonalityTestCard.Models.Setup.UserElementScore;
+
 
