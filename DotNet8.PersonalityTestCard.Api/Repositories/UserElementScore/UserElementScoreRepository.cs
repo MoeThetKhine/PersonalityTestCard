@@ -1,6 +1,4 @@
-﻿using DotNet8.PersonalityTestCard.Models.Setup.UserElementScore;
-
-namespace DotNet8.PersonalityTestCard.Api.Repositories.UserElementScore;
+﻿namespace DotNet8.PersonalityTestCard.Api.Repositories.UserElementScore;
 
 public class UserElementScoreRepository : IUserElementScoreRepository
 {
