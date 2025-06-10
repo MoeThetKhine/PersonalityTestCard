@@ -1,6 +1,4 @@
-﻿using DotNet8.PersonalityTestCard.Api.Features.UserElementScore.Queries.GetUserElementScore;
-
-namespace DotNet8.PersonalityTestCard.Api.Controllers.UserElementScore;
+﻿namespace DotNet8.PersonalityTestCard.Api.Controllers.UserElementScore;
 
 [Route("api/[controller]")]
 [ApiController]

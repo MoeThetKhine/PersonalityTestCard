@@ -18,3 +18,5 @@ global using DotNet8.PersonalityTestCard.Api.Features.User.Command.CreateUser;
 global using DotNet8.PersonalityTestCard.Api.Features.User.Queries.GetUserById;
 global using DotNet8.PersonalityTestCard.Api.Features.User.Command.UpdateUser;
 global using DotNet8.PersonalityTestCard.Api.Features.UserCard.Command.CreateUserCard;
+global using DotNet8.PersonalityTestCard.Api.Features.UserElementScore.Queries.GetUserElementScore;
+
