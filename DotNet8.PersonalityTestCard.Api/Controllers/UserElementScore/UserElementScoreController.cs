@@ -33,6 +33,8 @@ public class UserElementScoreController : BaseController
 
 	#endregion
 
+	#region GetUserElementScoreByUserIdAsync
+
 	[HttpGet("{userId}")]
 
 	public async Task<IActionResult> GetUserElementScoreByUserIdAsync(int userId)
@@ -53,4 +55,6 @@ public class UserElementScoreController : BaseController
 			return InternalServerError(ex);
 		}
 	}
+
+	#endregion
 }
