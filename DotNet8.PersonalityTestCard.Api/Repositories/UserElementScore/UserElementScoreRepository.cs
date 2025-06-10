@@ -9,6 +9,8 @@ public class UserElementScoreRepository : IUserElementScoreRepository
 		_appDbContext = appDbContext;
 	}
 
+	#region GetUserElementScoreAsync
+
 	public async Task<UserElementScoreRequestModel> GetUserElementScoreAsync()
 	{
 		try
@@ -34,4 +36,6 @@ public class UserElementScoreRepository : IUserElementScoreRepository
 			throw new Exception(ex.Message);
 		}
 	}
+
+	#endregion
 }
