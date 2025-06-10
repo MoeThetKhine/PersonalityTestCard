@@ -1,4 +1,6 @@
-﻿namespace DotNet8.PersonalityTestCard.Api.Controllers.UserElementScore;
+﻿using DotNet8.PersonalityTestCard.Api.Features.UserElementScore.Queries.GetUserElementScoreByUserId;
+
+namespace DotNet8.PersonalityTestCard.Api.Controllers.UserElementScore;
 
 [Route("api/[controller]")]
 [ApiController]
@@ -30,4 +32,25 @@ public class UserElementScoreController : BaseController
 	}
 
 	#endregion
+
+	[HttpGet("{userId}")]
+
+	public async Task<IActionResult> GetUserElementScoreByUserIdAsync(int userId)
+	{
+		try
+		{
+			var query = new GetUserElementScoreByUserIdQuery()
+			{
+				UserId = userId
+			};
+
+			var item = await _mediator.Send(query);
+
+			return Content(item);
+		}
+		catch (Exception ex)
+		{
+			return InternalServerError(ex);
+		}
+	}
 }
