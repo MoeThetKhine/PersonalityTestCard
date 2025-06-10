@@ -1,5 +1,7 @@
 ﻿namespace DotNet8.PersonalityTestCard.Api.Repositories.UserCard;
 
+#region IUserCardRepository
+
 public interface IUserCardRepository
 {
 	Task<List<TblUserCard>> GetUserCardsAsync(int userId);
@@ -7,3 +9,5 @@ public interface IUserCardRepository
 	Task AddUserCardsAsync(List<TblUserCard> userCards);
 	Task SaveChangesAsync();
 }
+
+#endregion
