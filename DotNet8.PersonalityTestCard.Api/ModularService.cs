@@ -1,4 +1,5 @@
 ﻿using DotNet8.PersonalityTestCard.Api.Repositories.UserCard;
+using DotNet8.PersonalityTestCard.Api.Repositories.UserElementScore;
 
 namespace DotNet8.PersonalityTestCard.Api;
 
@@ -27,7 +28,8 @@ public static class ModularService
 			.AddScoped<ICardRepository, CardRepository>()
 			.AddScoped<IElementRepository, ElementRepository>()
 			.AddScoped<IUserRepository, UserRepository>()
-			.AddScoped<IUserCardRepository, UserCardRepository>();
+			.AddScoped<IUserCardRepository, UserCardRepository>()
+			.AddScoped<IUserElementScoreRepository, UserElementScoreRepository>();
 
 		return services;
 	}
