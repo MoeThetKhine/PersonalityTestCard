@@ -1,7 +1,4 @@
-﻿
-using DotNet8.PersonalityTestCard.Api.Repositories.UserCard;
-
-namespace DotNet8.PersonalityTestCard.Api.Features.UserCard.Command.CreateUserCard
+﻿namespace DotNet8.PersonalityTestCard.Api.Features.UserCard.Command.CreateUserCard
 {
 	public class CreateUserCardCommandHandler : IRequestHandler<CreateUserCardCommand, int>
 	{
