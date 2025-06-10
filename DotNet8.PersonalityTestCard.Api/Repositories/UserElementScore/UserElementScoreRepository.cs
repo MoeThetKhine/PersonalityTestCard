@@ -38,4 +38,26 @@ public class UserElementScoreRepository : IUserElementScoreRepository
 	}
 
 	#endregion
+
+
+	public async Task<UserElementScoreResponseModel> GetUserElementScoreByUserIdAsync(int id)
+	{
+		try
+		{
+			var item = await _appDbContext.TblUserElementScores
+				.Include(x => x.User) // Include user navigation property
+				.Include(x => x.Element) // Include element navigation property
+				.AsNoTracking()
+				.Where(x => x.UserId == id)
+				.OrderByDescending(x => x.Score) // Optional: get top score
+				.FirstOrDefaultAsync()
+				?? throw new Exception("No data found");
+
+			return item.ElementScoreChange(); // your mapper
+		}
+		catch (Exception ex)
+		{
+			throw new Exception(ex.Message);
+		}
+	}
 }
