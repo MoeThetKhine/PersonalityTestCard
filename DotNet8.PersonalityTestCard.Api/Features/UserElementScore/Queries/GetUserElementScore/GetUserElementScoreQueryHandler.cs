@@ -9,8 +9,12 @@ public class GetUserElementScoreQueryHandler : IRequestHandler<GetUserElementSco
 		_userElementScoreRepository = userElementScoreRepository;
 	}
 
+	#region Handle
+
 	public async Task<UserElementScoreRequestModel> Handle(GetUserElementScoreQuery request, CancellationToken cancellationToken)
 	{
 		return await _userElementScoreRepository.GetUserElementScoreAsync();
 	}
+
+	#endregion
 }
