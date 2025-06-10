@@ -13,6 +13,8 @@ public class UserElementScoreController : BaseController
 		_mediator = mediator;
 	}
 
+	#region GetUserElementScoreAsync
+
 	[HttpGet]
 	public async Task<IActionResult> GetUserElementScoreAsync()
 	{
@@ -28,4 +30,6 @@ public class UserElementScoreController : BaseController
 			return InternalServerError(ex);
 		}
 	}
+
+	#endregion
 }
