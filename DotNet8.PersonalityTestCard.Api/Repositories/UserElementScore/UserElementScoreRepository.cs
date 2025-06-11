@@ -39,6 +39,7 @@ public class UserElementScoreRepository : IUserElementScoreRepository
 
 	#endregion
 
+	#region GetUserElementScoreByUserIdAsync
 
 	public async Task<UserElementScoreResponseModel> GetUserElementScoreByUserIdAsync(int id)
 	{
@@ -60,4 +61,7 @@ public class UserElementScoreRepository : IUserElementScoreRepository
 			throw new Exception(ex.Message);
 		}
 	}
+
+	#endregion
+
 }
