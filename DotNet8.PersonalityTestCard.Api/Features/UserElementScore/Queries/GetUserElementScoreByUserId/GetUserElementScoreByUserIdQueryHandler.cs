@@ -1,5 +1,7 @@
 ﻿namespace DotNet8.PersonalityTestCard.Api.Features.UserElementScore.Queries.GetUserElementScoreByUserId;
 
+#region GetUserElementScoreByUserIdQueryHandler
+
 public class GetUserElementScoreByUserIdQueryHandler : IRequestHandler<GetUserElementScoreByUserIdQuery, UserElementScoreResponseModel>
 {
 	private readonly IUserElementScoreRepository _userElementScoreRepository;
@@ -17,3 +19,5 @@ public class GetUserElementScoreByUserIdQueryHandler : IRequestHandler<GetUserEl
 		return await _userElementScoreRepository.GetUserElementScoreByUserIdAsync(request.UserId);
 	}
 }
+
+#endregion
