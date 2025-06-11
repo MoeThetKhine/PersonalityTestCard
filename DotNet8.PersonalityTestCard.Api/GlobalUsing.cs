@@ -22,5 +22,7 @@ global using DotNet8.PersonalityTestCard.Api.Features.UserElementScore.Queries.G
 global using DotNet8.PersonalityTestCard.Api.Repositories.UserCard;
 global using DotNet8.PersonalityTestCard.Api.Repositories.UserElementScore;
 global using DotNet8.PersonalityTestCard.Models.Setup.UserElementScore;
+global using DotNet8.PersonalityTestCard.Api.Features.UserElementScore.Queries.GetUserElementScoreByUserId;
+
 
 
