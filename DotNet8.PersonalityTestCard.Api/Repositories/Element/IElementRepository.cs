@@ -4,7 +4,7 @@
 
 public interface IElementRepository
 {
-	Task<ElementListResponseModel> GetElementAsync();
+	Task<Result<ElementListResponseModel>> GetElementAsync();
 }
 
 #endregion
