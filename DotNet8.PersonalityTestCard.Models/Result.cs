@@ -32,8 +32,12 @@ public class Result<T>
 
 	#endregion
 
+	#region SaveSuccess
+
 	public static Result<T> SaveSuccess(string message = "Saving Successful.",EnumStatusCode statusCode = EnumStatusCode.Success)
 		=> Result<T>.Success(message, statusCode);
+
+	#endregion
 
 	public static Result<T> UpdateSuccess(string message = "Updating Successful.",EnumStatusCode statusCode = EnumStatusCode.Success) 
 		=> Result<T>.Success(message, statusCode);
