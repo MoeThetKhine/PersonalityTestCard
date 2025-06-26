@@ -2,7 +2,7 @@
 
 #region GetElementListQueryHandler
 
-public class GetElementListQueryHandler : IRequestHandler<GetElementListQuery, ElementListResponseModel>
+public class GetElementListQueryHandler : IRequestHandler<GetElementListQuery, Result<ElementListResponseModel>>
 {
 	private readonly IElementRepository _elementRepository;
 
@@ -11,7 +11,7 @@ public class GetElementListQueryHandler : IRequestHandler<GetElementListQuery, E
 		_elementRepository = elementRepository;
 	}
 
-	public async Task<ElementListResponseModel> Handle(GetElementListQuery request, CancellationToken cancellationToken)
+	public async Task<Result<ElementListResponseModel>> Handle(GetElementListQuery request, CancellationToken cancellationToken)
 	{
 		return await _elementRepository.GetElementAsync();
 	}
