@@ -16,17 +16,27 @@ public class UserController : BaseController
 	[HttpGet]
 	public async Task<IActionResult> GetUserListAsync()
 	{
-		try
-		{
-			var query = new GetUserListQuery();
-			var lst = await _mediator.Send(query);
+		var result = await _mediator.Send(new GetUserListQuery());
 
-			return Content(lst);
-		}
-		catch (Exception ex)
-		{
-			return InternalServerError(ex);
-		}
+		if (result.IsSuccess)
+			return Content(result);
+
+		return StatusCode((int)result.StatusCode, result);
+	}
+
+	#endregion
+
+	#region GetUserByIdAsync
+
+	[HttpGet("{id}")]
+	public async Task<IActionResult> GetUserByIdAsync(int id)
+	{
+		var result = await _mediator.Send(new GetUserByIdQuery { UserId = id });
+
+		if (result.IsSuccess)
+			return Content(result);
+
+		return StatusCode((int)result.StatusCode, result);
 	}
 
 	#endregion
@@ -36,40 +46,12 @@ public class UserController : BaseController
 	[HttpPost]
 	public async Task<IActionResult> CreateUserAsync([FromBody] UserRequestModel requestModel)
 	{
-		try
-		{
-			var command = new CreateUserCommand()
-			{
-				userRequest = requestModel
-			};
-			int result = await _mediator.Send(command);
+		var result = await _mediator.Send(new CreateUserCommand { userRequest = requestModel });
 
-			return result > 0 ? Created("Register Successful") : BadRequest("Creating Fail.");
-		}
-		catch (Exception ex)
-		{
-			return InternalServerError(ex);
-		}
-	}
+		if (result.IsSuccess)
+			return Created(result.Message);
 
-	#endregion
-
-	#region GetBlogByIdAsync
-
-	[HttpGet("{id}")]
-	public async Task<IActionResult> GetBlogByIdAsync(int id)
-	{
-		try
-		{
-			var query = new GetUserByIdQuery() { UserId = id };
-			var item = await _mediator.Send(query);
-
-			return Content(item);
-		}
-		catch (Exception ex)
-		{
-			return InternalServerError(ex);
-		}
+		return StatusCode((int)result.StatusCode, result);
 	}
 
 	#endregion
@@ -79,36 +61,16 @@ public class UserController : BaseController
 	[HttpPut("{id}")]
 	public async Task<IActionResult> UpdateUserAsync([FromBody] UserRequestModel userRequestModel, int id)
 	{
-		try
+		var result = await _mediator.Send(new UpdateUserCommand
 		{
-			var command = new UpdateUserCommand()
-			{
-				userRequestModel = userRequestModel,
-				UserId = id,
-			};
+			userRequestModel = userRequestModel,
+			UserId = id
+		});
 
-			int result = await _mediator.Send(command);
+		if (result.IsSuccess)
+			return Ok(result);
 
-			if (result > 0)
-			{
-				return Ok(new
-				{
-					Message = "User updated successfully",
-					UserId = id
-				});
-			}
-			else
-			{
-				return NotFound(new
-				{
-					Message = $"User with ID {id} not found or update failed"
-				});
-			}
-		}
-		catch (Exception ex)
-		{
-			return InternalServerError(ex);
-		}
+		return StatusCode((int)result.StatusCode, result);
 	}
 
 	#endregion
