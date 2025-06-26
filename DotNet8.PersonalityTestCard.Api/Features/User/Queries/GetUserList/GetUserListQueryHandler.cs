@@ -2,7 +2,7 @@
 
 #region GetUserListQueryHandler
 
-public class GetUserListQueryHandler : IRequestHandler<GetUserListQuery, UserListResponseModel>
+public class GetUserListQueryHandler : IRequestHandler<GetUserListQuery, Result<UserListResponseModel>>
 {
 	private readonly IUserRepository _userRepository;
 
@@ -11,7 +11,7 @@ public class GetUserListQueryHandler : IRequestHandler<GetUserListQuery, UserLis
 		_userRepository = userRepository;
 	}
 
-	public async Task<UserListResponseModel> Handle(GetUserListQuery request, CancellationToken cancellationToken)
+	public async Task<Result<UserListResponseModel>> Handle(GetUserListQuery request, CancellationToken cancellationToken)
 	{
 		return await _userRepository.GetUserListAsync();
 	}
