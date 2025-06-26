@@ -19,14 +19,17 @@ public class ElementController : BaseController
 		try
 		{
 			var query = new GetElementListQuery();
-			var lst = await _mediator.Send(query);
+			var result = await _mediator.Send(query);
 
-			return Content(lst);
+			if (result.IsSuccess)
+				return Content(result);
+
+			return StatusCode((int)result.StatusCode, result);
 		}
-
 		catch (Exception ex)
 		{
-			return InternalServerError(ex);
+			var errorResult = Result<ElementListResponseModel>.Failure(ex);
+			return StatusCode((int)errorResult.StatusCode, errorResult);
 		}
 	}
 
