@@ -1,6 +1,6 @@
 ﻿namespace DotNet8.PersonalityTestCard.Api.Features.User.Queries.GetUserById;
 
-public class GetUserByIdQuery : IRequest<UserModel>
+public class GetUserByIdQuery : IRequest<Result<UserModel>>
 {
-	public int UserId {  get; set; }
+	public int UserId { get; set; }
 }
