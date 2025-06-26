@@ -72,6 +72,10 @@ public class Result<T>
 
 	#endregion
 
+	#region NotFound
+
 	public static Result<T> NotFound(string message = "No Data Found.") =>
   Result<T>.Failure(message, EnumStatusCode.NotFound);
+
+	#endregion
 }
