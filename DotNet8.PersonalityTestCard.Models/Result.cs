@@ -1,6 +1,4 @@
-﻿using DotNet8.PersonalityTestCard.Models.Enums;
-
-namespace DotNet8.PersonalityTestCard.Models
+﻿namespace DotNet8.PersonalityTestCard.Models
 {
 	public class Result<T>
 	{
