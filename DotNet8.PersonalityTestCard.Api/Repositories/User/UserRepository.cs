@@ -11,7 +11,7 @@ public class UserRepository : IUserRepository
 
 	#region GetUserListAsync
 
-	public async Task<UserListResponseModel> GetUserListAsync()
+	public async Task<Result<UserListResponseModel>> GetUserListAsync()
 	{
 		try
 		{
@@ -20,18 +20,18 @@ public class UserRepository : IUserRepository
 				.OrderByDescending(x => x.UserId)
 				.ToListAsync();
 
+			if (!dataLst.Any())
+				return Result<UserListResponseModel>.NotFound("No users found.");
+
 			var lst = dataLst.Select(x => x.Change()).ToList();
 
-			UserListResponseModel responseModel = new()
-			{
-				DataLst = lst
-			};
+			var responseModel = new UserListResponseModel { DataLst = lst };
 
-			return responseModel;
+			return Result<UserListResponseModel>.Success(responseModel);
 		}
 		catch (Exception ex)
 		{
-			throw new Exception(ex.Message);
+			return Result<UserListResponseModel>.Failure(ex);
 		}
 	}
 
@@ -39,16 +39,20 @@ public class UserRepository : IUserRepository
 
 	#region CreateUserAsync
 
-	public async Task<int> CreateUserAsync(UserRequestModel requestModel)
+	public async Task<Result<int>> CreateUserAsync(UserRequestModel requestModel)
 	{
 		try
 		{
 			await _context.TblUsers.AddAsync(requestModel.Change());
-			return await _context.SaveChangesAsync();
+			var result = await _context.SaveChangesAsync();
+
+			return result > 0
+				? Result<int>.Success(result, "User created successfully.")
+				: Result<int>.Failure("Creating user failed.");
 		}
 		catch (Exception ex)
 		{
-			throw new Exception(ex.Message);
+			return Result<int>.Failure(ex);
 		}
 	}
 
@@ -56,20 +60,22 @@ public class UserRepository : IUserRepository
 
 	#region GetUserByIdAsync
 
-	public async Task<UserModel> GetUserByIdAsync(int id)
+	public async Task<Result<UserModel>> GetUserByIdAsync(int id)
 	{
 		try
 		{
 			var item = await _context.TblUsers
 				.AsNoTracking()
-				.FirstOrDefaultAsync(x => x.UserId == id)
-				?? throw new Exception("No data found");
+				.FirstOrDefaultAsync(x => x.UserId == id);
 
-			return item.Change();
+			if (item == null)
+				return Result<UserModel>.NotFound("User not found.");
+
+			return Result<UserModel>.Success(item.Change());
 		}
 		catch (Exception ex)
 		{
-			throw new Exception(ex.Message);
+			return Result<UserModel>.Failure(ex);
 		}
 	}
 
@@ -77,25 +83,27 @@ public class UserRepository : IUserRepository
 
 	#region UpdateUserAsync
 
-	public async Task<int> UpdateUserAsync(UserRequestModel requestModel, int id)
+	public async Task<Result<int>> UpdateUserAsync(UserRequestModel requestModel, int id)
 	{
 		try
 		{
 			var item = await _context.TblUsers
-				.AsNoTracking()
-				.FirstOrDefaultAsync(x => x.UserId == id) ?? throw new Exception("Blog Id cannot be empty.");
+				.FirstOrDefaultAsync(x => x.UserId == id);
+
+			if (item == null)
+				return Result<int>.NotFound($"User with ID {id} not found.");
 
 			if (!string.IsNullOrEmpty(requestModel.Username))
-			{
 				item.Username = requestModel.Username;
-			}
-			
+
 			_context.Entry(item).State = EntityState.Modified;
-			return await _context.SaveChangesAsync();
+			var result = await _context.SaveChangesAsync();
+
+			return Result<int>.Success(result, "User updated successfully.");
 		}
 		catch (Exception ex)
 		{
-			throw new Exception(ex.Message);
+			return Result<int>.Failure(ex);
 		}
 	}
 
