@@ -1,25 +1,19 @@
 ﻿namespace DotNet8.PersonalityTestCard.Api.Features.User.Command.UpdateUser;
 
-public class UpdateUserCommandHandler : IRequestHandler<UpdateUserCommand , int>
+public class UpdateUserCommandHandler : IRequestHandler<UpdateUserCommand, Result<int>>
 {
 	private readonly IUserRepository _userRepository;
 
 	public UpdateUserCommandHandler(IUserRepository userRepository)
 	{
-		this._userRepository = userRepository;
+		_userRepository = userRepository;
 	}
 
-	#region Handle
-
-	public async Task<int> Handle(UpdateUserCommand request, CancellationToken cancellationToken)
+	public async Task<Result<int>> Handle(UpdateUserCommand request, CancellationToken cancellationToken)
 	{
-		if(request.UserId <= 0)
-		{
-			throw new Exception("Blog Id cannot be empty.");
-		}
+		if (request.UserId <= 0)
+			return Result<int>.Failure("User ID must be greater than zero.");
 
 		return await _userRepository.UpdateUserAsync(request.userRequestModel, request.UserId);
 	}
-
-	#endregion
 }
