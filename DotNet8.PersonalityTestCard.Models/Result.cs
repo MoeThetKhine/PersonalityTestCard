@@ -31,5 +31,8 @@ namespace DotNet8.PersonalityTestCard.Models
 		   IsSuccess = true
 	   };
 
+		public static Result<T> SaveSuccess(string message = "Saving Successful.",EnumStatusCode statusCode = EnumStatusCode.Success)
+			=> Result<T>.Success(message, statusCode);
+
 	}
 }
