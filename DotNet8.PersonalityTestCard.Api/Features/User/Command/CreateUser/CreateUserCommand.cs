@@ -2,9 +2,9 @@
 
 #region CreateUserCommand
 
-public class CreateUserCommand : IRequest<int>
+public class CreateUserCommand : IRequest<Result<int>>
 {
-	public UserRequestModel userRequest {  get; set; }
+	public UserRequestModel userRequest { get; set; }
 }
 
 #endregion
