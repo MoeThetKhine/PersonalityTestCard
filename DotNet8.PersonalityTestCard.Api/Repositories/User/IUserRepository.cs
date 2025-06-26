@@ -4,10 +4,10 @@
 
 public interface IUserRepository
 {
-	Task<UserListResponseModel> GetUserListAsync();
-	Task<UserModel> GetUserByIdAsync(int id);
-	Task<int> CreateUserAsync(UserRequestModel requestModel);
-	Task<int> UpdateUserAsync(UserRequestModel requestModel, int id);
+	Task<Result<UserListResponseModel>> GetUserListAsync();
+	Task<Result<UserModel>> GetUserByIdAsync(int id);
+	Task<Result<int>> CreateUserAsync(UserRequestModel requestModel);
+	Task<Result<int>> UpdateUserAsync(UserRequestModel requestModel, int id);
 }
 
 #endregion
