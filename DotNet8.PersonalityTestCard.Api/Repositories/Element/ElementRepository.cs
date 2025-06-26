@@ -1,4 +1,6 @@
-﻿namespace DotNet8.PersonalityTestCard.Api.Repositories.Element;
+﻿using DotNet8.PersonalityTestCard.Models.Resources;
+
+namespace DotNet8.PersonalityTestCard.Api.Repositories.Element;
 
 public class ElementRepository : IElementRepository
 {
@@ -11,7 +13,7 @@ public class ElementRepository : IElementRepository
 
 	#region GetElementAsync
 
-	public async Task<ElementListResponseModel> GetElementAsync()
+	public async Task<Result<ElementListResponseModel>> GetElementAsync()
 	{
 		try
 		{
@@ -20,6 +22,9 @@ public class ElementRepository : IElementRepository
 				.OrderByDescending(x => x.ElementId)
 				.ToListAsync();
 
+			if (!dataLst.Any())
+				return Result<ElementListResponseModel>.NotFound(MessageResource.NotFound);
+
 			var lst = dataLst.Select(x => x.Change()).ToList();
 
 			ElementListResponseModel responseModel = new()
@@ -27,11 +32,11 @@ public class ElementRepository : IElementRepository
 				DataLst = lst
 			};
 
-			return responseModel;
+			return Result<ElementListResponseModel>.Success(responseModel, MessageResource.Success);
 		}
 		catch (Exception ex)
 		{
-			throw new Exception(ex.Message);
+			return Result<ElementListResponseModel>.Failure(ex);
 		}
 	}
 
