@@ -40,5 +40,13 @@ namespace DotNet8.PersonalityTestCard.Models
 		public static Result<T> DeleteSuccess(string message = "Deleting Successful.",EnumStatusCode statusCode = EnumStatusCode.Success) 
 			=> Result<T>.Success(message, statusCode);
 
+		public static Result<T> Failure(string message = "Fail.",EnumStatusCode statusCode = EnumStatusCode.BadRequest) =>
+		new()
+		{
+			Message = message,
+			StatusCode = statusCode,
+			IsSuccess = false
+		};
+
 	}
 }
