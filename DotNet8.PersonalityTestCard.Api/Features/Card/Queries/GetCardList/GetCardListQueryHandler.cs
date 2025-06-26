@@ -2,7 +2,7 @@
 
 #region GetCardListQueryHandler
 
-public class GetCardListQueryHandler : IRequestHandler<GetCardListQuery, CardListResponseModel>
+public class GetCardListQueryHandler : IRequestHandler<GetCardListQuery, Result<CardListResponseModel>>
 {
 	private readonly ICardRepository _cardRepository;
 
@@ -11,11 +11,11 @@ public class GetCardListQueryHandler : IRequestHandler<GetCardListQuery, CardLis
 		_cardRepository = cardRepository;
 	}
 
-	public async Task<CardListResponseModel> Handle(GetCardListQuery request, CancellationToken cancellationToken)
+	public async Task<Result<CardListResponseModel>> Handle(GetCardListQuery request, CancellationToken cancellationToken)
 	{
-
 		return await _cardRepository.GetCardsAsync();
 	}
 }
+
 
 #endregion
