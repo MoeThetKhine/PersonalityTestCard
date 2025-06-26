@@ -1,6 +1,6 @@
 ﻿namespace DotNet8.PersonalityTestCard.Api.Features.User.Command.CreateUser;
 
-public class CreateUserCommandHandler : IRequestHandler<CreateUserCommand, int>
+public class CreateUserCommandHandler : IRequestHandler<CreateUserCommand, Result<int>>
 {
 	private readonly IUserRepository _userRepository;
 
@@ -9,22 +9,15 @@ public class CreateUserCommandHandler : IRequestHandler<CreateUserCommand, int>
 		_userRepository = userRepository;
 	}
 
-	#region Handle
-
-	public async Task<int> Handle(CreateUserCommand request, CancellationToken cancellationToken)
+	public async Task<Result<int>> Handle(CreateUserCommand request, CancellationToken cancellationToken)
 	{
-		if(string.IsNullOrEmpty(request.userRequest.Username))
-		{
-			throw new Exception("Username cannot be empty");
-		}
+		if (string.IsNullOrEmpty(request.userRequest.Username))
+			return Result<int>.Failure("Username cannot be empty.");
+
 		if (string.IsNullOrEmpty(request.userRequest.Email))
-		{
-			throw new Exception("Email cannot be empty");
-		}
+			return Result<int>.Failure("Email cannot be empty.");
 
 		return await _userRepository.CreateUserAsync(request.userRequest);
 	}
-
-	#endregion
-
 }
+
