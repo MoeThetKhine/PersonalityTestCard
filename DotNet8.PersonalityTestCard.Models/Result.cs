@@ -22,5 +22,14 @@ namespace DotNet8.PersonalityTestCard.Models
 			IsSuccess = true
 		};
 
+		public static Result<T> Success(T data,string message = "Success.",EnumStatusCode statusCode = EnumStatusCode.Success) =>
+	   new()
+	   {
+		   Data = data,
+		   Message = message,
+		   StatusCode = statusCode,
+		   IsSuccess = true
+	   };
+
 	}
 }
