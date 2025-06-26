@@ -37,5 +37,8 @@ namespace DotNet8.PersonalityTestCard.Models
 		public static Result<T> UpdateSuccess(string message = "Updating Successful.",EnumStatusCode statusCode = EnumStatusCode.Success) 
 			=> Result<T>.Success(message, statusCode);
 
+		public static Result<T> DeleteSuccess(string message = "Deleting Successful.",EnumStatusCode statusCode = EnumStatusCode.Success) 
+			=> Result<T>.Success(message, statusCode);
+
 	}
 }
