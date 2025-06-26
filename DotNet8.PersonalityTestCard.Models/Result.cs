@@ -48,5 +48,8 @@ namespace DotNet8.PersonalityTestCard.Models
 			IsSuccess = false
 		};
 
+		public static Result<T> Failure(Exception ex) =>
+	  Result<T>.Failure(ex.ToString(), EnumStatusCode.InternalServerError);
+
 	}
 }
