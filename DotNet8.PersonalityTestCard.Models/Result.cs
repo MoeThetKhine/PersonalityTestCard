@@ -46,8 +46,12 @@ public class Result<T>
 
 	#endregion
 
+	#region DeleteSuccess
+
 	public static Result<T> DeleteSuccess(string message = "Deleting Successful.",EnumStatusCode statusCode = EnumStatusCode.Success) 
 		=> Result<T>.Success(message, statusCode);
+
+	#endregion
 
 	public static Result<T> Failure(string message = "Fail.",EnumStatusCode statusCode = EnumStatusCode.BadRequest) =>
 	new()
