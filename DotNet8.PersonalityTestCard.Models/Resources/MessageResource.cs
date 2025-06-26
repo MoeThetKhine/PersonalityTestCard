@@ -1,5 +1,7 @@
 ﻿namespace DotNet8.PersonalityTestCard.Models.Resources;
 
+#region MessageResource
+
 public class MessageResource
 {
 
@@ -16,3 +18,5 @@ public class MessageResource
 	public static string InvalidPageNo { get; } = "Page No is invalid.";
 	public static string InvalidPageSize { get; } = "Page Size is invalid.";
 }
+
+#endregion
