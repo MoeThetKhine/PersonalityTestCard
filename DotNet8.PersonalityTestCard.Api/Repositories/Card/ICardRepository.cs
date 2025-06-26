@@ -4,7 +4,7 @@
 
 public interface ICardRepository
 {
-	Task<CardListResponseModel> GetCardsAsync();
+	Task<Result<CardListResponseModel>> GetCardsAsync();
 }
 
 #endregion
