@@ -51,5 +51,7 @@ namespace DotNet8.PersonalityTestCard.Models
 		public static Result<T> Failure(Exception ex) =>
 	  Result<T>.Failure(ex.ToString(), EnumStatusCode.InternalServerError);
 
+		public static Result<T> NotFound(string message = "No Data Found.") =>
+	  Result<T>.Failure(message, EnumStatusCode.NotFound);
 	}
 }
