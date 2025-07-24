@@ -35,6 +35,4 @@ public class CardController : BaseController
 
 	#endregion
 
-
-
 }
